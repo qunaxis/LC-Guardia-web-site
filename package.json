@@ -1,12 +1,12 @@
 {
-  "name": "optimizedhtml",
-  "version": "1.0.0",
-  "description": "OptimizedHTML - Start HTML Template",
+  "name": "LC-Guardia-web-site",
+  "version": "0.0.1",
+  "description": "Landing",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "WebDesign Master",
+  "author": "qunaxis",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.11.1",
