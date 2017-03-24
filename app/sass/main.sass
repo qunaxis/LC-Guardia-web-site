@@ -3,5 +3,50 @@
 @import "libs"
 
 //Custom styles here
+section
+  text-align: center
+  padding: 4em 0
+  h2
+    margin-bottom: 1em
+.advantages
+
+  h3
+    margin: .5em 0
+.advantage
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
+  margin: 2em 0
+  &-icon
+    height: 10em
+
+.services
+  .service
+    transition: all .2s ease-out
+    padding-top: 2em
+    &:hover
+      padding-top: 0
+    &-name
+      border: 3px solid $color-dark
+      margin-top: -7px
+      display: -webkit-flex
+      display: -ms-flex
+      display: flex
+      flex-direction: column
+      justify-content: center
+      min-height: 4em
+  h2
+    margin-bottom: 2em
+  h3
+    line-height: 1.2
+    font-size: 1.25em
+    font-weight: 500
+  span
+    transition: all .2s ease-out
+    display: none
+    text-align: center
+    &hover
+      display: block
 
 @import "media"

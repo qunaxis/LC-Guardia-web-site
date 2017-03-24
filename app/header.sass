@@ -3,16 +3,21 @@
 @import "sass/base"
 
 //First screen styles
+
 header
+  text-align: center
   background-color: $color-dark
+  background: url('./img/background_1.jpg') center no-repeat
+  background-size: cover
   min-height: 100vh
   color: white
+  padding-top: 1em
   navbar
     padding: 0 !important
     margin: 0 !important
     justify-content: space-between
     font-weight: 900
-    img
+    object
       width: 20%
       height: 20%
       order: 1
@@ -27,17 +32,17 @@ header
         color: white
       &:hover
         margin-bottom: -1px
-        border-bottom: 1px solid #555
+        border-bottom: 1px solid #AAA
   .main-title
     text-align: center
-    margin: 4em 0 6em 0
+    margin: 6em 0 6em 0
     h1
       font-weight: 900
-      font-size: 3em
+      font-size: 2.5em
       padding-bottom: 0
       margin-bottom: .25em
-
   .uto
+    text-align: left
     display: -webkit-flex
     display: -ms-flex
     display: flex
@@ -47,9 +52,10 @@ header
     justify-content: space-between
     p
       margin: 0
+
 .phonenumber
   font-size: 1.5em
-  font-weight: 500
+  font-weight: 300
 .active
   border-bottom: 1px solid white
 
@@ -82,13 +88,13 @@ form
       color: white
       font-size: 24px
     &:focus::-webkit-input-placeholder
-      color: #555
+      color: rgba(#555, .5)
     &::-moz-placeholder
-      color: #555
+      color: rgba(#555, .5)
     &:-moz-placeholder
-      color: #555
+      color: rgba(#555, .5)
     &:-ms-input-placeholder
-      color: #555
+      color: rgba(#555, .5)
     &:focus
       outline: none
   input:required:valid
@@ -98,13 +104,14 @@ form
   button
     background-color: rgba(white, 0)
     border: 4px solid white
-    padding: .5em 1em
+    padding: .25em .5em
     width: 100%
     color: white
-    font-weight: 600
+    font-weight: 500
+    font-size: 2.5em
     letter-spacing: .1em
-    font-size: 2em
-    &:focus
-      background-color: rgba(#555, .5)
+    &:active
+      outline: none
+      background-color: rgba(#333, .8)
     &:hover
-      background-color: rgba(#555, .3)
+      background-color: rgba(#333, .3)
