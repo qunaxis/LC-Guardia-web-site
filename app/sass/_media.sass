@@ -13,8 +13,25 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
-
+  .nav-large
+    display: none
+  .nav-mobile
+    display: flex !important
+    justify-content: flex-start
+    align-items: center
+    .logo
+      flex-basis: 60%
+      display: block
+      &::after
+        content: ''
+        flex-basis: 20%
+    #logo
+      width: 100%
+    .fa-navicon
+      flex-basis: 20%
+      font-size: 2em
+      display: block
+      text-align: left
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
 	/**/
@@ -24,7 +41,7 @@
   body
     font-size: 14px
     h2
-      font-size: 1.5em
+      font-size: 2em
     h3
       font-size: 1.125em
       font-weight: 600
@@ -37,18 +54,15 @@
       font-size: 1em
     .uto
       font-size: .75em
-    navbar
-      a
-        display: none
   main
     padding: .5em
   footer
-    justify-content: space-between
     min-height: 100vh
     font-size: 0.75em
-    padding: 6em 0 1em 0
-    h2
-      font-size: 1.75em !important
+    padding: 1em
+    .offer
+      h2
+        font-size: 1.5em !important
     .phonenumber
       font-size: 1em
   form
@@ -66,6 +80,7 @@
     button
       font-size: 1.25em
     .footer
+      padding: 0
       h4
         font-size: 0.75em
       a
@@ -97,6 +112,9 @@
 @media only screen and (min-width : 992px)
   .container
     width: 1400px
+  .col-md-24
+    flex: 0 0 20%
+    max-width: 20%
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px)
@@ -106,3 +124,18 @@
   .advantage
     line-height: 1.6
     margin-bottom: 2em
+
+@media only screen and (max-height: 700px)
+  .main-title
+    h1
+      font-size: 2em !important
+      line-height: 1.4
+    .phonenumber
+      font-size: 1.25em
+  .uto
+    margin-bottom: 0
+  form
+    padding: 1em
+    margin-bottom: 0
+    button
+      font-size: 2em

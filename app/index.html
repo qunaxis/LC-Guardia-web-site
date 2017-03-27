@@ -62,17 +62,25 @@
 	<!-- Custom HTML -->
 	<header class="container-fluid">
 		<div class="container">
-			<navbar class="row col-12">
+			<navbar class="nav-large row col-12">
 				<a href="#" class="active">Главная</a>
 				<a href="#">О клубе</a>
 				<a href="#">Фотогалерея</a>
-				<object type="image/svg+xml" data="./img/logo-center.svg" class="logo-center">
+				<object type="image/svg+xml" data="./img/logo-center.svg" id="logo">
 					ГВАРДИЯ
 				</object>
 				<a href="#">Стоимость</a>
 				<a href="#">Отзывы</a>
 				<a href="#">Контакты</a>
 			</navbar>
+			<div class="nav-mobile">
+				<i class="fa fa-navicon"></i>
+				<div class="logo">
+					<object type="image/svg+xml" data="./img/logo-center.svg" id="logo">
+						ГВАРДИЯ
+					</object>
+				</div>
+			</div>
 		</div>
 		<div class="container">
 			<div class="main-title">
@@ -163,7 +171,7 @@
 		<section class="services">
 			<h2>УСЛУГИ И МЕРОПРИЯТИЯ</h2>
 			<div class="row">
-				<div class="service col">
+				<div class="service col-12 col-md-24">
 					<img src="./img/peoples/1.jpg" alt="">
 					<div class="service-name">
 						<h3>ИГРЫ И КВЕСТЫ</h3>
@@ -172,7 +180,7 @@
 						<a href="#">Подробнее</a>
 					</div>
 				</div>
-				<div class="service col">
+				<div class="service col-12 col-md-24">
 					<img src="./img/peoples/2.jpg" alt="">
 					<div class="service-name">
 						<h3>КОРПОРАТИВЫ</h3>
@@ -181,7 +189,7 @@
 						<a href="#">Подробнее</a>
 					</div>
 				</div>
-				<div class="service col">
+				<div class="service col-12 col-md-24">
 					<img src="./img/peoples/3.jpg" alt="">
 					<div class="service-name">
 						<h3>ДЕТСКИЕ ПРАЗДНИКИ</h3>
@@ -190,7 +198,7 @@
 						<a href="#">Подробнее</a>
 					</div>
 				</div>
-				<div class="service col">
+				<div class="service col-12 col-md-24">
 					<img src="./img/peoples/4.jpg" alt="">
 					<div class="service-name">
 						<h3>СБОРНЫЕ ИГРЫ</h3>
@@ -199,7 +207,7 @@
 						<a href="#">Подробнее</a>
 					</div>
 				</div>
-				<div class="service col">
+				<div class="service col-12 col-md-24">
 					<img src="./img/peoples/5.jpg" alt="">
 					<div class="service-name">
 						<h3>ПЕЙНТБОЛ</h3>
@@ -234,8 +242,8 @@
 </div>
 
 	<footer class="container-fluid">
-		<div class="container">
-			<section class="offer">
+		<div class="offer container">
+			<section>
 				<h2>
 					ЕЩЁ СОМНЕВАЕШЬСЯ? <br />
 					УЗНАЙ ПОДРОБНОСТИ <br />
@@ -243,8 +251,6 @@
 				</h2>
 				<span class="phonenumber">8 920 512 48 48</span>
 			</section>
-		</div>
-		<div class="container">
 			<section class="col-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
 				<form action="/">
 					<input type="text" required placeholder="Ваше имя">

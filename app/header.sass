@@ -19,12 +19,16 @@ header
   justify-content: space-between
   flex-direction: column
   width: 100%
-  navbar
-    padding: 0 !important
-    margin: 0 !important
+  .container
+    margin: 0
+  .nav-mobile
+    display: none
+  .nav-large
+    padding: 0
+    margin: 0
     justify-content: space-between
     font-weight: 900
-    object
+    #logo
       width: 20%
       height: 20%
       order: 1
@@ -60,7 +64,7 @@ header
     p
       margin: .25em
   .call-form
-    margin-bottom: 1rem
+    margin-bottom: 1em
 .phonenumber
   font-size: 1.5em
   font-weight: 300
@@ -72,8 +76,12 @@ form
   padding: 2em
   border: 2px solid white
   background-color: rgba(#555, .2)
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: space-around
   input
-    display: block
+    // display: block
     margin: 0
     width: 100%
     margin-bottom: 1.75em
