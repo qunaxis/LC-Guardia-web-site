@@ -26,7 +26,7 @@ gulp.task('browser-sync', function() {
 	});
 });
 
-gulp.task('sass', ['headersass'], function() {
+gulp.task('sass', ['headersass', 'headersass-costs'], function() {
 	return gulp.src('app/sass/**/*.sass')
 		.pipe(sass({
 			includePaths: bourbon.includePaths
@@ -108,7 +108,8 @@ gulp.task('build', ['removedist', 'buildhtml', 'imagemin', 'sass', 'libs'], func
 
 	var buildCss = gulp.src([
 		'app/css/fonts.min.css',
-		'app/css/main.min.css'
+		'app/css/main.min.css',
+		'app/css/main-costs.min.css'
 		]).pipe(gulp.dest('docs/css'));
 
 	var buildFiles = gulp.src([
