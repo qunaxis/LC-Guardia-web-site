@@ -16,6 +16,43 @@ main
     h2
       margin-bottom: 1em
 
+.about_lasertag
+  div
+    align-self: center
+  img
+    width: 100%
+    height: auto
+    border: 4px solid $color-dark
+  blockquote
+    text-align: left
+    border-left: 4px solid $color-dark
+    padding: 1em 1em 1em 2em
+    margin: 0
+    height: auto
+    align-self: center
+    background-color: rgba($color-dark, 0.05)
+    abbr
+      border-bottom: 1px dashed  lighten($color-dark, 40%)
+    p
+      padding: .5em 0
+    .from
+      font-style: italic
+      font-size: 14px
+      text-align: right
+      color: lighten($color-dark, 40%)
+  .name
+    border: 3px solid $color-dark
+    margin-top: -11px
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    flex-direction: column
+    justify-content: center
+    min-height: 4em
+  .more-info
+    background-color: $color-dark
+    color: white
+    padding-bottom: .25em
 .advantages
   display: -webkit-flex
   display: -ms-flex
@@ -96,8 +133,6 @@ a
   font-size: 24px
 
 footer
-  display: -webkit-flex
-  display: -ms-flex
   display: flex
   text-align: center
   background-color: $color-dark

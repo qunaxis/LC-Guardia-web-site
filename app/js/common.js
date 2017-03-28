@@ -21,4 +21,6 @@ $(function() {
 				container.hide();
 		}
 	});
+
+	$.ionTabs("#info");
 });

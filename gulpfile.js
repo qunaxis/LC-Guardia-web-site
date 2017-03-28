@@ -50,10 +50,23 @@ gulp.task('headersass', function() {
 		.pipe(browserSync.reload({stream: true}))
 });
 
+gulp.task('headersass-costs', function() {
+	return gulp.src('app/header-costs.sass')
+		.pipe(sass({
+			includePaths: bourbon.includePaths
+		}).on("error", notify.onError()))
+		.pipe(rename({suffix: '.min', prefix : ''}))
+		.pipe(autoprefixer(['last 15 versions']))
+		.pipe(cleanCSS())
+		.pipe(gulp.dest('app'))
+		.pipe(browserSync.reload({stream: true}))
+});
+
 gulp.task('libs', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/slick-carousel/slick/slick.min.js',
+		'app/libs/tabs/js/ion.tabs.min.js',
 		// 'app/libs/magnific-popup/magnific-popup.min.js'
 		])
 		.pipe(concat('libs.min.js'))
@@ -63,6 +76,7 @@ gulp.task('libs', function() {
 
 gulp.task('watch', ['sass', 'libs', 'browser-sync'], function() {
 	gulp.watch('app/header.sass', ['headersass']);
+	gulp.watch('app/header-costs.sass', ['headersass-costs']);
 	gulp.watch('app/sass/**/*.sass', ['sass']);
 	gulp.watch('app/*.html', browserSync.reload);
 	gulp.watch('app/js/**/*.js', browserSync.reload);
