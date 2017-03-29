@@ -4,96 +4,20 @@
 @import "sass/libs"
 @import "sass/tabs"
 
-header
-  background-color: $color-dark
-  color: white
-  display: flex
-  padding: 1em 0
-  .nav-large
-    margin-bottom: 1em
-  .nav-mobile
-    position: relative
-    display: none
-    nav
-      position: absolute
-      top: 0
-      margin-left: -1px
-      background-color: $color-dark
-      z-index: 100
-      a
-        text-align: left
-        padding: .5em 1em
-        display: block
-        width: auto
-        text-decoration: none
-        color: white
-        &:hover
-          border: 0
-          margin: 0
-          background-color: rgba(white, 0.05)
-    .active
-      border: 0
-      background-color: rgba(white, 0.1)
-  .nav-large
-    padding: 0
-    margin: 0
-    justify-content: space-between
-    font-weight: 900
-    #logo
-      width: 10%
-      height: 1%
-      order: 1
-    a
-      order: 1
-      font-size: 1.25em
-      font-weight: 600
-      align-self: center
-      text-decoration: none
-      color: white
-      &:visited
-        color: white
-      &:hover
-        margin-bottom: -1px
-        border-bottom: 1px solid #AAA
-    .active
-      border-bottom: 1px solid white
-
-@media only screen and (max-width : 992px)
-  .nav-large
-    display: none
-  .nav-mobile
-    display: flex !important
-    justify-content: flex-start
-    align-items: center
-    .logo
-      flex-basis: 60%
-      display: block
-      &::after
-        content: ''
-        flex-basis: 20%
-    #logo
-      width: 100%
-    .fa-navicon
-      flex-basis: 20%
-      font-size: 2em
-      display: block
-      text-align: left
-
 .wrapper
   background: url('img/background_haki.svg')
   background-size: cover
 
 main
-  overflow-x: hidden
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
-  background-color: #fff
   h2
     text-align: center
     margin-bottom: .5em
   section
     margin: 1em 0 2em 0
+
 .packages
-  text-align: left
+  &-package
+    text-align: left
   h3
     font-size: 2em
     font-weight: 600
@@ -125,6 +49,7 @@ main
       outline: none
     &:hover
       background-color: rgba(#333, .1)
+
 .ionTabs
   text-align: left
   img

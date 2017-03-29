@@ -26,7 +26,7 @@ gulp.task('browser-sync', function() {
 	});
 });
 
-gulp.task('sass', ['headersass', 'headersass-costs'], function() {
+gulp.task('sass', ['headersass', 'headersass-costs', 'headersass-contacts'], function() {
 	return gulp.src('app/sass/**/*.sass')
 		.pipe(sass({
 			includePaths: bourbon.includePaths
@@ -62,6 +62,18 @@ gulp.task('headersass-costs', function() {
 		.pipe(browserSync.reload({stream: true}))
 });
 
+gulp.task('headersass-contacts', function() {
+	return gulp.src('app/header-сontacts.sass')
+		.pipe(sass({
+			includePaths: bourbon.includePaths
+		}).on("error", notify.onError()))
+		.pipe(rename({suffix: '.min', prefix : ''}))
+		.pipe(autoprefixer(['last 15 versions']))
+		.pipe(cleanCSS())
+		.pipe(gulp.dest('app'))
+		.pipe(browserSync.reload({stream: true}))
+});
+
 gulp.task('libs', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
@@ -77,6 +89,7 @@ gulp.task('libs', function() {
 gulp.task('watch', ['sass', 'libs', 'browser-sync'], function() {
 	gulp.watch('app/header.sass', ['headersass']);
 	gulp.watch('app/header-costs.sass', ['headersass-costs']);
+	gulp.watch('app/header-сontacts.sass', ['headersass-contacts']);
 	gulp.watch('app/sass/**/*.sass', ['sass']);
 	gulp.watch('app/*.html', browserSync.reload);
 	gulp.watch('app/js/**/*.js', browserSync.reload);
@@ -109,7 +122,8 @@ gulp.task('build', ['removedist', 'buildhtml', 'imagemin', 'sass', 'libs'], func
 	var buildCss = gulp.src([
 		'app/css/fonts.min.css',
 		'app/css/main.min.css',
-		'app/css/main-costs.min.css'
+		'app/css/main-costs.min.css',
+        'app/css/main-contacts.min.css'
 		]).pipe(gulp.dest('docs/css'));
 
 	var buildFiles = gulp.src([
