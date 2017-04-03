@@ -11,6 +11,8 @@ $(function() {
         }).done(function() {
             alert('Заявка отправлена!');
             setTimeout(function() {
+                var magnificPopup = $.magnificPopup.instance;
+                magnificPopup.close();
                 th.trigger("reset");
             }, 1000);
         });

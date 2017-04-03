@@ -1,0 +1,32 @@
+footer
+  display: flex
+  text-align: center
+  background-color: $color-dark
+  justify-content: space-around
+  align-items: flex-start
+  overflow: hidden
+  color: white
+  padding-bottom: 1em
+  .row
+    width: 100%
+  .footer
+    color: $color-dark + 80%
+    h4
+      color: white - 50%
+  .social
+    font-size: 1.5em
+    a
+        &:hover
+          font-size: 1.25em
+        &:visited
+          color: inherit
+  a
+    color: inherit
+    transition: all .25s ease
+    text-decoration: none
+    &:hover
+      margin-bottom: 0
+      border: 0
+      color: white !important
+    &:visited
+      color: inherit
