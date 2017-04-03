@@ -1,0 +1,64 @@
+.call-form
+  width: 100%
+  padding: 2em
+  border: 2px solid white
+  background-color: rgba(#555, .2)
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  input
+    // display: block
+    margin: 0
+    width: 100%
+    margin-bottom: 1.75em
+    font-size: 1.5em
+    padding: 0 0 .5em 0
+    background-color: rgba(white, 0)
+    border: 0
+    border-bottom: 2px solid white
+    font-family: $default-font
+    color: white
+    &::-webkit-input-placeholder
+      color: white
+      font-size: 24px
+    &::-moz-placeholder
+      color: white
+      font-size: 24px
+    &:-moz-placeholder
+      color: white
+      font-size: 24px
+    &:-ms-input-placeholder
+      color: white
+      font-size: 24px
+    &:focus::-webkit-input-placeholder
+      color: rgba(#555, .5)
+    &::-moz-placeholder
+      color: rgba(#555, .5)
+    &:-moz-placeholder
+      color: rgba(#555, .5)
+    &:-ms-input-placeholder
+      color: rgba(#555, .5)
+    &:focus
+      outline: none
+  input:required:valid
+    font-family: $default-font
+    color: white
+    margin-right: 0
+button, .call-button
+  text-decoration: none
+  background-color: rgba(white, 0)
+  border: 4px solid white
+  padding: .25em .5em
+  width: 100%
+  color: white
+  font-weight: 500
+  font-size: 2.5em
+  letter-spacing: .1em
+  &:active
+    outline: none
+    background-color: rgba(#333, .8)
+  &:hover
+    background-color: rgba(#333, .3)
+  &:hover
+    background-color: rgba(#333, .1)

@@ -64,8 +64,8 @@
 		<div class="container">
 			<nav class="nav-large row col-12">
 				<a href="index.html" class="active">Главная</a>
-				<a href="#">О клубе</a>
-				<a href="#">Фотогалерея</a>
+				<a href="about.html">О клубе</a>
+				<a href="gallery.html">Фотогалерея</a>
 				<object type="image/svg+xml" data="./img/logo-center.svg" id="logo">
 					ГВАРДИЯ
 				</object>
@@ -77,8 +77,8 @@
 				<i class="fa fa-navicon"></i>
 				<nav style="display: none">
 					<a href="index.html" class="active">Главная</a>
-					<a href="#">О клубе</a>
-					<a href="#">Фотогалерея</a>
+					<a href="about.html">О клубе</a>
+					<a href="gallery.html">Фотогалерея</a>
 					<a href="costs.html">Стоимость</a>
 					<a href="#">Отзывы</a>
 					<a href="contacts.html">Контакты</a>
@@ -117,11 +117,15 @@
 						кто достоин повышения!
 					</p>
 				</section>
-				<section class="call-form col-12 col-xl-5">
-					<form action="/">
-						<input type="text" required placeholder="Ваше имя">
-						<input type="phonenumber" required placeholder="Ваш телефон">
-						<button type="submit">ЗАКАЗАТЬ ЗВОНОК</button>
+				<section class="form-wrapper col-12 col-xl-5">
+					<form class="call-form">
+						<input type="hidden" name="project_name" value="Сайт ЛК Гвардия - Главная">
+						<input type="hidden" name="admin_email" value="mazur-mark-lipetsk@yandex.ru">
+						<input type="hidden" name="form_subject" value="Заказ звонка">
+
+						<input type="text" name="Name" required placeholder="Ваше имя">
+						<input type="text" name="E-mail" required placeholder="Ваш телефон">
+						<button>ЗАКАЗАТЬ ЗВОНОК</button>
 					</form>
 				</section>
 			</div>
@@ -262,22 +266,22 @@
 				</div>
 			</div>
 			<div class="carouselPhotoes">
-				<div class="carouselPhotoes-item">
+				<div class="carouselPhotos-item">
 					<img data-lazy="./img/carouselPhotoes/1.jpg" alt="">
 				</div>
-				<div class="carouselPhotoes-item">
+				<div class="carouselPhotos-item">
 					<img data-lazy="./img/carouselPhotoes/2.jpg" alt="">
 				</div>
-				<div class="carouselPhotoes-item">
+				<div class="carouselPhotos-item">
 					<img data-lazy="./img/carouselPhotoes/3.jpg" alt="">
 				</div>
-				<div class="carouselPhotoes-item">
+				<div class="carouselPhotos-item">
 					<img data-lazy="./img/carouselPhotoes/4.jpg" alt="">
 				</div>
-				<div class="carouselPhotoes-item">
+				<div class="carouselPhotos-item">
 					<img data-lazy="./img/carouselPhotoes/5.jpg" alt="">
 				</div>
-				<div class="carouselPhotoes-item">
+				<div class="carouselPhotos-item">
 					<img data-lazy="./img/carouselPhotoes/6.jpg" alt="">
 				</div>
 			</div>
@@ -296,9 +300,9 @@
 				<span class="phonenumber">8 920 512 48 48</span>
 			</section>
 			<section class="col-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
-				<form action="/">
+				<form class="call-form">
 					<input type="text" required placeholder="Ваше имя">
-					<input type="phonenumber" required placeholder="Ваш телефон">
+					<input type="text" required placeholder="Ваш телефон">
 					<button type="submit">ЗАКАЗАТЬ ЗВОНОК</button>
 				</form>
 			</section>
@@ -308,11 +312,11 @@
 				<div class="col-6">
 					<h4>Карта сайта</h4>
 					<a href="#">Главная</a>
-					<a href="#">О клубе</a>
+					<a href="about.html">О клубе</a>
 					<a href="#">Фотогалерея</a>
 					<a href="#">Стоимость</a>
 					<a href="#">Отзывы</a>
-					<a href="#">Контакты</a>
+					<a href="contacts.html">О клубе</a>
 				</div>
 				<div class="col-6">
 					<h4>Контакты:</h4>

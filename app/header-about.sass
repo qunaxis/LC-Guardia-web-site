@@ -1,0 +1,26 @@
+@import "bourbon"
+@import "sass/vars"
+@import "sass/base"
+@import "sass/libs"
+
+h2
+  margin: 1em 0
+  text-align: center
+
+.carouselPhotos
+  margin: 1em 0
+  width: 100%
+  &-item
+    margin: auto
+    width: 100%
+    max-height: 45em
+  div:focus
+    outline: none
+  img
+    width: 100%
+    height: auto
+
+@media only screen and (min-width : 992px)
+  .carouselPhotos
+    width: 80%
+    margin: 1em auto
