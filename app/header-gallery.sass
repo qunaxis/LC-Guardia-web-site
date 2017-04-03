@@ -1,0 +1,17 @@
+@import "bourbon"
+@import "sass/vars"
+@import "sass/base"
+@import "sass/libs"
+
+.grid-sizer, .grid-item
+    width: 50%
+
+.grid-item img
+  display: block
+  max-width: 100%
+
+@media screen and (min-width: 768px)
+  .grid-sizer, .grid-item
+    width: 33.333%
+
+@import "sass/footer"
