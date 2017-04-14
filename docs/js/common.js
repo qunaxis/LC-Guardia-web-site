@@ -40,8 +40,15 @@ $(function() {
 				container.hide();
 		}
 	});
+    // // if (window.location.pathname === 'feedback.html'){
+    // $.get('https://api.vk.com/method/board.getComments?group_id=85475750&topic_id=31600822&extended=1', function(data) {
+    //     data = data.parseJSON();
+    //     comment = data.response.comments[1];
+    //     profile = data.response.profiles[1];
+    //     $('.comments').append('<div class="comments"><img src="' + profile.photo + '" alt="" class="col-4 comment-img"><blockquote class="col-8"><p class="comment-text">' +  + '</p><a class="comment-author" href="//vk.com/id' + profile.uid + '">' + profile.first_name + ' ' + profile.last_name + '</a></blockquote></div>');
+    // });
+    // // }
     var $grid = $('.grid').masonry({
-        // options...
         columnWidth: '.grid-sizer',
         itemSelector: '.grid-item',
         percentPosition: true
@@ -49,4 +56,5 @@ $(function() {
     $grid.imagesLoaded().progress( function() {
         $grid.masonry('layout');
     });
+
 });

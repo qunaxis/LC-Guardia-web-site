@@ -1,0 +1,37 @@
+@import "bourbon"
+@import "sass/vars"
+@import "sass/base"
+@import "sass/libs"
+
+main
+  text-align: center
+
+.comments
+  padding: 2em
+  text-align: left
+
+.comment
+  display: flex
+  flex-direction: row
+  margin-bottom: 2em
+
+img
+  border-radius: 50%
+  width: 50%
+  height: 50%
+  border: 4px solid #333
+  flex-basis: 10%
+
+blockquote
+  text-align: left
+  border-left: 4px solid $color-dark
+  padding: 1em 1em 1em 2em
+  margin: 0 0 0 1em
+  height: auto
+  align-self: center
+  background-color: rgba($color-dark, 0.05)
+  flex-basis: 90%
+  p
+    padding: .5em 0
+
+@import "sass/footer"

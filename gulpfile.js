@@ -19,14 +19,12 @@ var gulp           = require('gulp'),
 
 gulp.task('browser-sync', function() {
 	browserSync({
-		server: {
-			baseDir: 'app'
-		},
+		proxy: 'gvardiya48.dev',
 		notify: false
 	});
 });
 
-gulp.task('sass', ['headersass', 'headersass-costs', 'headersass-contacts', 'headersass-gallery', 'headersass-about'], function() {
+gulp.task('sass', ['headersass', 'headersass-costs', 'headersass-contacts', 'headersass-gallery', 'headersass-about', 'headersass-feedback'], function() {
 	return gulp.src('app/sass/**/*.sass')
 		.pipe(sass({
 			includePaths: bourbon.includePaths
@@ -97,6 +95,19 @@ gulp.task('headersass-about', function() {
         .pipe(gulp.dest('app'))
         .pipe(browserSync.reload({stream: true}))
 });
+
+gulp.task('headersass-feedback', function() {
+    return gulp.src('app/header-feedback.sass')
+        .pipe(sass({
+            includePaths: bourbon.includePaths
+        }).on("error", notify.onError()))
+        .pipe(rename({suffix: '.min', prefix : ''}))
+        .pipe(autoprefixer(['last 15 versions']))
+        .pipe(cleanCSS())
+        .pipe(gulp.dest('app'))
+        .pipe(browserSync.reload({stream: true}))
+});
+
 gulp.task('libs', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
@@ -116,7 +127,9 @@ gulp.task('watch', ['sass', 'libs', 'browser-sync'], function() {
 	gulp.watch('app/header-сontacts.sass', ['headersass-contacts']);
 	gulp.watch('app/header-gallery.sass', ['headersass-gallery']);
 	gulp.watch('app/header-about.sass', ['headersass-about']);
+	gulp.watch('app/header-feedback.sass', ['headersass-feedback']);
 	gulp.watch('app/sass/**/*.sass', ['sass']);
+	gulp.watch('app/*.php', browserSync.reload);
 	gulp.watch('app/*.html', browserSync.reload);
 	gulp.watch('app/js/**/*.js', browserSync.reload);
 });
@@ -132,7 +145,7 @@ gulp.task('imagemin', function() {
 		.pipe(gulp.dest('docs/img'));
 });
 
-gulp.task('buildhtml', function() {
+gulp.task('build-html', function() {
   gulp.src(['app/*.html'])
     .pipe(fileinclude({
       prefix: '@@'
@@ -141,9 +154,20 @@ gulp.task('buildhtml', function() {
     .pipe(gulp.dest('docs/'));
 });
 
+gulp.task('build-php', function() {
+  gulp.src(['app/*.php'])
+    .pipe(fileinclude({
+      prefix: '@@'
+    }))
+    .pipe(gulpRemoveHtml())
+    .pipe(gulp.dest('docs/'));
+});
+
+
+
 gulp.task('removedist', function() { return del.sync('docs'); });
 
-gulp.task('build', ['removedist', 'buildhtml', 'imagemin', 'sass', 'libs'], function() {
+gulp.task('build', ['removedist', 'build-html', 'build-php', 'imagemin', 'sass', 'libs'], function() {
 
 	var buildCss = gulp.src([
 		'app/css/fonts.min.css',
@@ -151,7 +175,8 @@ gulp.task('build', ['removedist', 'buildhtml', 'imagemin', 'sass', 'libs'], func
 		'app/css/main-costs.min.css',
         'app/css/main-contacts.min.css',
 		'app/css/main-gallery.min.css',
-		'app/css/main-about.min.css'
+		'app/css/main-about.min.css',
+		'app/css/main-feedback.min.css'
 		]).pipe(gulp.dest('docs/css'));
 
 	var buildFiles = gulp.src([
@@ -164,12 +189,27 @@ gulp.task('build', ['removedist', 'buildhtml', 'imagemin', 'sass', 'libs'], func
 
 });
 
-gulp.task('deploy', function() {
+gulp.task('local-deploy', function() {
+    var conn = ftp.create({
+        host:      'localhost',
+        user:      'qunaxis',
+        password:  '123123',
+        parallel:  10,
+        log: gutil.log
+    });
+    var globs = [
+        'docs/**',
+        'docs/.htaccess',
+    ];
+    return gulp.src(globs, {buffer: false})
+        .pipe(conn.dest('/'));
 
+});
+gulp.task('deploy', function() {
 	var conn = ftp.create({
-		host:      'localhost',
-		user:      'qunaxis',
-		password:  '123123',
+		host:      'shared-18.smartape.ru',
+		user:      'user11046_attend',
+		password:  'aspirin48',
 		parallel:  10,
 		log: gutil.log
 	});

@@ -7,6 +7,13 @@ h2
   margin: 1em 0
   text-align: center
 
+.diplomas
+  text-align: center
+  margin: .5em 0
+  img
+    width: 32%
+    height: auto
+
 .carouselPhotos
   margin: 1em 0
   width: 100%
@@ -19,7 +26,9 @@ h2
   img
     width: 100%
     height: auto
-
+  .slick-next, .slick-prev
+    &:before
+      color: $color-red
 @media only screen and (min-width : 992px)
   .carouselPhotos
     width: 80%
